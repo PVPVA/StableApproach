@@ -1,19 +1,14 @@
 {
     "enabled": true,
     "acf": {
-        "icao": "B772",
-        "author": "FlightFactor "
+        "icao": "B748",
+        "author": "Supercritical Simulations Group "
     },
     "speed": {
         "taxi": -1
     },
     "autoUpdate": true,
-    "replace_dref": [
-        {
-            "old": "sim/cockpit/radios/nav1_freq_hz",
-            "new": "T7Avionics/radios/ils1_freq"
-        }
-    ],
+    "replace_dref": [],
     "checkHeights": [
         {
             "template": "IMC"
@@ -65,14 +60,14 @@
 		{
             "template": "Approach speed (Vref/FMC)",
             "replace": {
-                "$VREF": "$T7Avionics/fms/vref",
+                "$VREF": "$SSG/B748/FMC/land_speed",
                 "$KIAS": "$sim/cockpit2/gauges/indicators/airspeed_kts_pilot"
             }
         },
         {
             "template": "Flaps",
             "replace": {
-                "$FLAPSCONDITION": "$sim/cockpit2/controls/flap_handle_deploy_ratio >= 0.95 or ($sim/cockpit2/controls/flap_handle_deploy_ratio >= 0.78 and $sim/cockpit2/controls/flap_handle_deploy_ratio <= 0.9)",
+                "$FLAPSCONDITION": "$sim/cockpit2/controls/flap_handle_deploy_ratio >= 0.95 or ($sim/cockpit2/controls/flap_handle_deploy_ratio >= 0.75 and $sim/cockpit2/controls/flap_handle_deploy_ratio <= 0.9)",
                 "$FLAPSTEXT": "25/30"
             }
         },
@@ -85,20 +80,20 @@
         {
             "template": "Speedbrake",
             "replace": {
-                "$CONDITION": "$sim/cockpit2/controls/speedbrake_ratio < -0.2"
+                "$CONDITION": "$SSG/CTRL/spdbrk_arm_sw > 0.9"
             }
         },
         {
             "template": "Autoflight",
             "replace": {
-                "$CONDITION": "$sim/cockpit2/autopilot/servos_on == 0"
+                "$CONDITION": "$sim/cockpit/autopilot/autopilot_mode < 2"
             }
         },
         {
             "template": "No Tailstrike",
             "replace": {
-                "$TAILSTRIKEPITCH": "10.2",
-                "$CAUTIONPITCH": "7.5"
+                "$TAILSTRIKEPITCH": "11.0",
+                "$CAUTIONPITCH": "9.0"
             }
         },
         {
