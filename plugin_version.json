@@ -13,7 +13,7 @@
         "max": "1.98.0"
       }
     },
-    "aircraft_profiles":{
+    "va.aircraft_profiles":{
       "use_custom": true,
       "revert_to_default": true
     }
