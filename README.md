@@ -1,5 +1,5 @@
 # StableApproach
-Flight data monitoring (FDM) for X-Plane 11 
+Flight data monitoring (FDM) for X-Plane 12
 
 See [Wiki](https://github.com/Clamb94/StableApproach/wiki) for instructions.
 
